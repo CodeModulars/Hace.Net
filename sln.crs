@@ -1,6 +1,6 @@
 # 加载模块
 @use "Hace.dll"
-@call pro_guid create_guid()
+@call $pro_guid create_guid()
 Microsoft Visual Studio Solution File, Format Version 12.00
 $# Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
