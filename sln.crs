@@ -1,5 +1,10 @@
 # 加载模块
-@use "Hace.dll"
+@use "Coder.Plugs.Hace.dll"
+# 获取项目名称
+@call $pro_name get_envir("pro_name")
+# 设定输出路径
+@render "$(pro_name).sln"
+# 创建一个Guid
 @call $pro_guid create_guid()
 Microsoft Visual Studio Solution File, Format Version 12.00
 $# Visual Studio Version 17
