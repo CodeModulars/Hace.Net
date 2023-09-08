@@ -1,7 +1,7 @@
 # 加载模块
 @use "Coder.Plugs.Hace.dll"
-# 获取项目名称
-@call $pro_name get_envir("pro_name")
+# 获取项目名称参数
+@call $pro_name get_argument("pro_name")
 # 设定输出路径
 @render "$(pro_name).sln"
 # 创建一个Guid
