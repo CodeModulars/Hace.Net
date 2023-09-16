@@ -25,7 +25,7 @@ Project("{$(pro_guid)}") = "$(pro_name).Apps", "$(pro_name).Apps\$(pro_name).App
 EndProject
 Project("{$(pro_guid)}") = "$(pro_name).Cores", "$(pro_name).Cores\$(pro_name).Cores.csproj", "{$(core_guid)}"
 EndProject
-Project("{$(pro_guid)}") = "$(pro_name).Entities", "$(pro_name).Cores\$(pro_name).Entities.csproj", "{$(entity_guid)}"
+Project("{$(pro_guid)}") = "$(pro_name).Entities", "$(pro_name).Entities\$(pro_name).Entities.csproj", "{$(entity_guid)}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
