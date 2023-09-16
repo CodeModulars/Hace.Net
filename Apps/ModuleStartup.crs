@@ -1,0 +1,20 @@
+# 获取项目名称参数
+@call $pro_name get_argument("project")
+# 设定输出路径
+@render "$(pro_name).Apps\\ModuleStartup.cs"
+using Microsoft.Extensions.DependencyInjection;
+using Suyaa.Hosting;
+
+namespace $(pro_name).Apps
+{
+    /// <summary>
+    /// 模块启动器
+    /// </summary>
+    public class ModuleStartup : IModuleStartup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            /* 模块初始化注册 */
+        }
+    }
+}
