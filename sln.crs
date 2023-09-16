@@ -7,13 +7,25 @@
 @call $sln_guid string_upper($sln_guid)
 @call $host_guid create_guid()
 @call $host_guid string_upper($host_guid)
+@call $app_guid create_guid()
+@call $app_guid string_upper($app_guid)
+@call $core_guid create_guid()
+@call $core_guid string_upper($core_guid)
+@call $entity_guid create_guid()
+@call $entity_guid string_upper($entity_guid)
 @call $pro_guid create_guid()
 @call $pro_guid string_upper($pro_guid)
 Microsoft Visual Studio Solution File, Format Version 12.00
 $# Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{$(pro_guid)}") = "$(pro_name).Host", ""$(pro_name).Host\$(pro_name).Host.csproj", "{$(host_guid)}"
+Project("{$(pro_guid)}") = "$(pro_name).Host", "$(pro_name).Host\$(pro_name).Host.csproj", "{$(host_guid)}"
+EndProject
+Project("{$(pro_guid)}") = "$(pro_name).Apps", "$(pro_name).Apps\$(pro_name).Apps.csproj", "{$(app_guid)}"
+EndProject
+Project("{$(pro_guid)}") = "$(pro_name).Cores", "$(pro_name).Cores\$(pro_name).Cores.csproj", "{$(core_guid)}"
+EndProject
+Project("{$(pro_guid)}") = "$(pro_name).Cores", "$(pro_name).Cores\$(pro_name).Cores.csproj", "{$(entity_guid)}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +37,18 @@ Global
 		{$(host_guid)}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{$(host_guid)}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{$(host_guid)}.Release|Any CPU.Build.0 = Release|Any CPU
+        {$(app_guid)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(app_guid)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(app_guid)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(app_guid)}.Release|Any CPU.Build.0 = Release|Any CPU
+        {$(core_guid)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(core_guid)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(core_guid)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(core_guid)}.Release|Any CPU.Build.0 = Release|Any CPU
+        {$(entity_guid)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(entity_guid)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(entity_guid)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(entity_guid)}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
