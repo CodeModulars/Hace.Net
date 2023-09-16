@@ -3,7 +3,7 @@
 # 设定输出路径
 @render "$(pro_name).Cores\\$(pro_name).Cores.csproj"
 # 计算顶层名称
-@call $pro_name_list string_split($pro_name)
+@call $pro_name_list string_split($pro_name,".")
 @call $pro_top_name string_list_get(0)
 <Project Sdk="Microsoft.NET.Sdk">
 
