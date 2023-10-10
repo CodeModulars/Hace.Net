@@ -5,6 +5,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Suyaa.DependencyInjection;
 using Suyaa.Hosting.Kernel.Dependency;
+using Suyaa.Hosting.Kernel.Helpers;
 
 namespace $(pro_name).Cores
 {
