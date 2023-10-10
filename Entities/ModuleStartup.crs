@@ -1,7 +1,7 @@
 # 获取项目名称参数
 @call $pro_name get_argument("project")
 # 设定输出路径
-@render "$(pro_name).Apps\\ModuleStartup.cs"
+@render "$(pro_name).Entities\\ModuleStartup.cs"
 using Microsoft.Extensions.DependencyInjection;
 using Suyaa.DependencyInjection;
 using Suyaa.Hosting.Kernel.Dependency;
