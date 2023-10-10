@@ -15,6 +15,10 @@
 @call $entity_guid string_upper($entity_guid)
 @call $pro_guid create_guid()
 @call $pro_guid string_upper($pro_guid)
+@call $guid_config create_guid()
+@call $guid_config string_upper($guid_config)
+@call $guid_infrastructure create_guid()
+@call $guid_infrastructure string_upper($guid_infrastructure)
 Microsoft Visual Studio Solution File, Format Version 12.00
 $# Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
@@ -26,6 +30,10 @@ EndProject
 Project("{$(pro_guid)}") = "$(pro_name).Cores", "$(pro_name).Cores\$(pro_name).Cores.csproj", "{$(core_guid)}"
 EndProject
 Project("{$(pro_guid)}") = "$(pro_name).Entities", "$(pro_name).Entities\$(pro_name).Entities.csproj", "{$(entity_guid)}"
+EndProject
+Project("{$(pro_guid)}") = "Jues.Configure", "..\..\Jues.Configure\Jues.Configure.csproj", "{$(guid_config)}"
+EndProject
+Project("{$(pro_guid)}") = "Jues.Infrastructure", "..\..\Jues.Infrastructure\Jues.Infrastructure.csproj", "{$(guid_infrastructure)}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +57,14 @@ Global
 		{$(entity_guid)}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{$(entity_guid)}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{$(entity_guid)}.Release|Any CPU.Build.0 = Release|Any CPU
+		{$(guid_config)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(guid_config)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(guid_config)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(guid_config)}.Release|Any CPU.Build.0 = Release|Any CPU
+		{$(guid_infrastructure)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$(guid_infrastructure)}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$(guid_infrastructure)}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$(guid_infrastructure)}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -29,12 +29,15 @@ namespace $(pro_name).Host
         public Startup(IConfiguration configuration) : base(configuration)
         {
         }
-
-        protected override void OnConfigureServices(IServiceCollection services)
+        /// <summary>
+        /// 依赖配置
+        /// </summary>
+        /// <param name="dependency"></param>
+        protected override void OnConfigureDependency(IDependencyManager dependency)
         {
-            base.OnConfigureServices(services);
+            base.OnConfigureDependency(dependency);
             // 添加模块注册
-            services.AddModuler<Apps.ModuleStartup>();
+            dependency.AddModuler<Apps.ModuleStartup>();
         }
     }
 }

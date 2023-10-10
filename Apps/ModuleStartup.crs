@@ -3,7 +3,7 @@
 # 设定输出路径
 @render "$(pro_name).Apps\\ModuleStartup.cs"
 using Microsoft.Extensions.DependencyInjection;
-using Suyaa.Hosting;
+using Suyaa.Hosting.Kernel.Dependency;
 
 namespace $(pro_name).Apps
 {
@@ -12,7 +12,10 @@ namespace $(pro_name).Apps
     /// </summary>
     public class ModuleStartup : IModuleStartup
     {
-        public void ConfigureServices(IServiceCollection services)
+        /// <summary>
+        /// 依赖配置
+        /// </summary>
+        public void ConfigureDependency(IDependencyManager dependency)
         {
             /* 模块初始化注册 */
         }
