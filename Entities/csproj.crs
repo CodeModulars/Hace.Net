@@ -2,6 +2,9 @@
 @call $pro_name get_argument("project")
 # 设定输出路径
 @render "$(pro_name).Entities\\$(pro_name).Entities.csproj"
+# 计算顶层名称
+@call $pro_name_list string_split($pro_name, ".")
+@call $pro_top_name string_list_get($pro_name_list, 0)
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -10,5 +13,9 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\$(pro_top_name).Infrastructure\$(pro_top_name).Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -15,7 +15,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\$(pro_top_name).Infrastructure\$(pro_top_name).Infrastructure.csproj" />
     <ProjectReference Include="..\$(pro_name).Entities\$(pro_name).Entities.csproj" />
   </ItemGroup>
 

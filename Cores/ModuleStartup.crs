@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Suyaa.DependencyInjection;
 using Suyaa.Hosting.Kernel.Dependency;
 
-namespace $(pro_name).Apps
+namespace $(pro_name).Cores
 {
     /// <summary>
     /// 模块启动器
@@ -20,8 +20,8 @@ namespace $(pro_name).Apps
         {
             // 注册依赖
             dependency.AddModulerIoc<ModuleStartup>();
-            // 添加业务模块
-            dependency.AddModuler<Cores.ModuleStartup>();
+            // 添加实例模块
+            dependency.AddModuler<Entities.ModuleStartup>();
         }
     }
 }
