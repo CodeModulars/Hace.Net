@@ -2,8 +2,11 @@
 @call $pro_name get_argument("project")
 # 设定输出路径
 @render "$(pro_name).Host\\Program.cs"
-# 计算顶层名称
-@call $pro_name_list string_split($pro_name, ".")
-@call $pro_top_name string_list_get($pro_name_list, 0)
-// 运行宿主
-$(pro_top_name).Infrastructure.Hosting.CreateBuilder<$(pro_name).Host.Startup>(args).Run();
+using $(pro_name).Host;
+using System.Diagnostics;
+@line
+// 注册日志
+sy.Logger.Factory.UseStringAction(message => Debug.WriteLine(message));
+sy.Logger.Create();
+// 运行主机服务
+sy.Hosting.CreateWebApplication<Startup>(args).Run();
