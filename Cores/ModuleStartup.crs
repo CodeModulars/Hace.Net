@@ -19,8 +19,10 @@ namespace $(pro_name).Cores
         /// </summary>
         public void ConfigureDependency(IDependencyManager dependency)
         {
-            // 注册依赖
-            dependency.AddModulerIoc<ModuleStartup>();
+            // 引入程序集
+            dependency.Include<ModuleStartup>();
+            // 注册服务核心依赖
+            dependency.AddModulerCores<ModuleStartup>();
             // 添加实例模块
             dependency.AddModuler<Entities.ModuleStartup>();
         }
