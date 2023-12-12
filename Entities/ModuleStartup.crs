@@ -2,10 +2,9 @@
 @call $pro_name get_argument("project")
 # 设定输出路径
 @render "$(pro_name).Entities\\ModuleStartup.cs"
-using Microsoft.Extensions.DependencyInjection;
-using Suyaa.DependencyInjection;
-using Suyaa.Hosting.Kernel.Dependency;
-using Suyaa.Hosting.Kernel.Helpers;
+using Suyaa.Hosting.Common.DependencyInjection.Dependency;
+using Suyaa.Hosting.Common.Modules.Dependency;
+using Suyaa.Hosting.Core.Helpers;
 @line
 namespace $(pro_name).Entities
 {
@@ -19,8 +18,6 @@ namespace $(pro_name).Entities
         /// </summary>
         public void ConfigureDependency(IDependencyManager dependency)
         {
-            // 注册依赖
-            dependency.AddModulerIoc<ModuleStartup>();
         }
     }
 }

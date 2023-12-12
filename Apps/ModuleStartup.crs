@@ -1,12 +1,18 @@
 # 获取项目名称参数
 @call $pro_name get_argument("project")
+# 获取项目名称
+@call $pro_name_list string_split($pro_name, ".")
+@call $pro_name_list_length string_list_length($pro_name_list)
+@call $pro_name_list_length_1 sub($pro_name_list_length, 1)
+@call $pro_short_name string_list_get($pro_name_list, $pro_name_list_length_1)
 # 设定输出路径
 @render "$(pro_name).Apps\\ModuleStartup.cs"
-using Microsoft.Extensions.DependencyInjection;
-using Suyaa.DependencyInjection;
-using Suyaa.Hosting.Kernel.Dependency;
-using Suyaa.Hosting.Kernel.Helpers;
+using Suyaa.Hosting.Common.Attributes;
+using Suyaa.Hosting.Common.DependencyInjection.Dependency;
+using Suyaa.Hosting.Common.Modules.Dependency;
+using Suyaa.Hosting.Common.Modules.Helpers;
 @line
+[assembly: Module("$(pro_short_name)")]
 namespace $(pro_name).Apps
 {
     /// <summary>
