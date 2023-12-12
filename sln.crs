@@ -37,7 +37,7 @@ Project("{$(pro_guid)}") = "$(pro_name).Cores", "$(pro_name).Cores\$(pro_name).C
 EndProject
 Project("{$(pro_guid)}") = "$(pro_name).Entities", "$(pro_name).Entities\$(pro_name).Entities.csproj", "{$(entity_guid)}"
 EndProject
-Project("{$(pro_guid)}") = "$(pro_parent_name).Infrastructure", "..\..\$(pro_parent_name).Infrastructure\$(pro_parent_name).Infrastructure.csproj", "{$(guid_infrastructure)}"
+Project("{$(pro_guid)}") = "$(pro_parent_name).Infrastructure", "..\..\Infrastructure\$(pro_parent_name).Infrastructure\$(pro_parent_name).Infrastructure.csproj", "{$(guid_infrastructure)}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
