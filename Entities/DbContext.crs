@@ -1,0 +1,25 @@
+# 获取项目名称参数
+@call $pro_name get_argument("project")
+# 计算项目名称及层级
+@call $pro_name_list string_split($pro_name, ".")
+@call $pro_name_list_length string_list_length($pro_name_list)
+@call $pro_name_list_length_1 sub($pro_name_list_length, 1)
+# 获取项目名称
+@call $pro_short_name string_list_get($pro_name_list, $pro_name_list_length_1)
+# 计算上层名称
+@call $pro_parent_name_list string_list_slice($pro_name_list, 0, $pro_name_list_length_1)
+@call $pro_parent_name string_list_join($pro_parent_name_list, ".")
+# 设定输出路径
+@render "$(pro_name).Entities\\$(pro_short_name)DbContext.cs"
+# 输出内容
+using $(pro_parent_name).Infrastructure.EFCore;
+@line
+namespace $(pro_name).Entities
+{
+    /// <summary>
+    /// 基础模块数据库上下文
+    /// </summary>
+    public class $(pro_short_name)DbContext : BasicDbContext
+    {
+    }
+}

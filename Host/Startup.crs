@@ -8,6 +8,7 @@
 @call $pro_name_list_length_1 sub($pro_name_list_length, 1)
 @call $pro_parent_name_list string_list_slice($pro_name_list, 0, $pro_name_list_length_1)
 @call $pro_parent_name string_list_join($pro_parent_name_list, ".")
+# 输出内容
 using $(pro_parent_name).Infrastructure;
 using Suyaa.Hosting.Common.DependencyInjection.Dependency;
 using Suyaa.Hosting.Common.Modules.Helpers;
@@ -17,15 +18,8 @@ namespace $(pro_name).Host
     /// <summary>
     /// 启动器
     /// </summary>
-    public class Startup : StartupBase
+    public class Startup : BaseStartup
     {
-        /// <summary>
-        /// 启动器
-        /// </summary>
-        /// <param name="configuration"></param>
-        public Startup(IConfiguration configuration) : base(configuration)
-        {
-        }
         /// <summary>
         /// 依赖配置
         /// </summary>
