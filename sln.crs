@@ -1,5 +1,11 @@
 # 获取项目名称参数
 @call $pro_name get_argument("project")
+# 计算上层名称
+@call $pro_name_list string_split($pro_name, ".")
+@call $pro_name_list_length string_list_length($pro_name_list)
+@call $pro_name_list_length_1 sub($pro_name_list_length, 1)
+@call $pro_parent_name_list string_list_slice($pro_name_list, 0, $pro_name_list_length_1)
+@call $pro_parent_name string_list_join($pro_parent_name_list, ".")
 # 设定输出路径
 @render "$(pro_name).sln"
 # 创建Guid
@@ -31,9 +37,7 @@ Project("{$(pro_guid)}") = "$(pro_name).Cores", "$(pro_name).Cores\$(pro_name).C
 EndProject
 Project("{$(pro_guid)}") = "$(pro_name).Entities", "$(pro_name).Entities\$(pro_name).Entities.csproj", "{$(entity_guid)}"
 EndProject
-Project("{$(pro_guid)}") = "Jues.Configure", "..\..\Jues.Configure\Jues.Configure.csproj", "{$(guid_config)}"
-EndProject
-Project("{$(pro_guid)}") = "Jues.Infrastructure", "..\..\Jues.Infrastructure\Jues.Infrastructure.csproj", "{$(guid_infrastructure)}"
+Project("{$(pro_guid)}") = "$(pro_parent_name).Infrastructure", "..\..\$(pro_parent_name).Infrastructure\$(pro_parent_name).Infrastructure.csproj", "{$(guid_infrastructure)}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +61,6 @@ Global
 		{$(entity_guid)}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{$(entity_guid)}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{$(entity_guid)}.Release|Any CPU.Build.0 = Release|Any CPU
-		{$(guid_config)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{$(guid_config)}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{$(guid_config)}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{$(guid_config)}.Release|Any CPU.Build.0 = Release|Any CPU
 		{$(guid_infrastructure)}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{$(guid_infrastructure)}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{$(guid_infrastructure)}.Release|Any CPU.ActiveCfg = Release|Any CPU

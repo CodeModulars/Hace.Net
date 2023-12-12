@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Suyaa.DependencyInjection;
 using Suyaa.Hosting.Kernel.Dependency;
 using Suyaa.Hosting.Kernel.Helpers;
-
+@line
 namespace $(pro_name).Entities
 {
     /// <summary>

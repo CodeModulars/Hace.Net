@@ -3,16 +3,16 @@
 # 设定输出路径
 @render "$(pro_name).Apps\\$(pro_name).Apps.csproj"
 <Project Sdk="Microsoft.NET.Sdk">
-
+@line
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-
+@line
   <ItemGroup>
     <ProjectReference Include="..\$(pro_name).Cores\$(pro_name).Cores.csproj" />
   </ItemGroup>
-
+@line
 </Project>
